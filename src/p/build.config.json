@@ -1,0 +1,6 @@
+{
+	"script": {
+	    "framework.js": ["./framework/main", "./knockout/main", "./jquery/main"],
+	    "index.js": ["./index/main"]
+	}
+}

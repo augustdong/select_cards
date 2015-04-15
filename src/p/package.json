@@ -1,0 +1,14 @@
+{
+  "name": "pc",
+  "version": "0.0.1",
+  "devDependencies": {
+    "com-browserify": "0.0.4",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^3.5.0",
+    "grunt-cache-bust-tag": "0.0.4",
+    "grunt-contrib-htmlmin": "^0.4.0",
+    "grunt-contrib-stylus": "^0.21.0",
+    "grunt-contrib-uglify": "^0.8.0",
+    "pb-ext": "0.0.4"
+  }
+}

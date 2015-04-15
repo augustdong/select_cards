@@ -1,0 +1,1 @@
+loadjs.d("./index/main",function(a,b,c){var d=(a("framework"),function(){});c.init=d},{framework:"./framework/main"});
