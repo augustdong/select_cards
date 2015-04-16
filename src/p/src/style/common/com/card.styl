@@ -3,56 +3,49 @@
 	min-height: 260px;
   width: 100%;
   height: 100%;
-	perspective: 800px;
-	margin-left:auto;
-	margin-right:auto;
+	perspective: 600px;
 	position: relative;
-	> .inner {
-	    width: 100%;
-      height: 100%;
-      background: #ffffff;
-      position: relative;
-      transform-style: preserve-3d;
-      transition: 0.3s transform;
-      transform-origin: center center;
-      opacity: 1;
-      border-radius: 4px;
-  		> .item {
-        position: relative;
-  			width: 100%;
-  			height: 100%;
-  			backface-visibility: hidden;
-  			&.front {
-  				opacity: 1;
-  			}
-  			&.back {
-  				position: absolute;
-  				top: 0;
-  				transform: rotateY(.5turn) translateZ(1px);
-  				opacity: 0;
-  			}
-        > .content {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%,-50%);
-          box-sizing: border-box;
-          padding: 20px;
-          width: 100%;
-          height: auto;
-          font-size: 16px;
-          line-height: 22px;
-          text-align: center;
-        }
-  		}
-  		&.flipped {
-  			transform: rotateY(.5turn);
-  			.front {
-  				opacity: 0;
-  			}
-  			.back {
-  				opacity: 1;
-  			}
-  		}
-	}
+  > .ui-card-item {
+  	width: 100%;
+  	height: 100%;
+  	backface-visibility: hidden;
+    transition: all 0.4s ease-in-out;
+    transform-style: preserve-flat;
+    background: #ffffff;
+    box-shadow: 2px 2px 5px #1A4B67;
+    border-radius: 4px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  	&.front {
+      z-index: 900;
+      transform: rotateX(0deg) rotateY(0deg);
+  	}
+  	&.back {
+      z-index: 800;
+  		transform: rotateX(0deg) rotateY(-179deg);
+  	}
+    > .content {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      backface-visibility: hidden;
+      box-sizing: border-box;
+      padding: 20px;
+      width: 100%;
+      height: auto;
+      font-smoothing: antialiased;
+    }
+  }
+  &.flipped > .ui-card-item {
+  	&.front {
+      transform: rotateX(0deg) rotateY(180deg);
+  	}
+  	&.back {
+      z-index: 1000;
+  		transform: rotateX(0deg) rotateY(0deg);
+  	}
+  }
 }
