@@ -1,6 +1,8 @@
 .ui-card {
-	width: 200px;
-	height: 260px;
+	min-width: 200px;
+	min-height: 260px;
+  width: 100%;
+  height: 100%;
 	perspective: 800px;
 	margin-left:auto;
 	margin-right:auto;
@@ -14,15 +16,12 @@
       transition: 0.3s transform;
       transform-origin: center center;
       opacity: 1;
-      border-radius: 6px;
+      border-radius: 4px;
   		> .item {
-  			display: block;
+        position: relative;
   			width: 100%;
   			height: 100%;
   			backface-visibility: hidden;
-  			font-size: 60px;
-  			text-align: center;
-  			line-height: 260px;
   			&.front {
   				opacity: 1;
   			}
@@ -32,6 +31,19 @@
   				transform: rotateY(.5turn) translateZ(1px);
   				opacity: 0;
   			}
+        > .content {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          box-sizing: border-box;
+          padding: 20px;
+          width: 100%;
+          height: auto;
+          font-size: 16px;
+          line-height: 22px;
+          text-align: center;
+        }
   		}
   		&.flipped {
   			transform: rotateY(.5turn);
