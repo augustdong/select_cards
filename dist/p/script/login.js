@@ -1,0 +1,1 @@
+loadjs.d("./login/main",function(a){var b=a("jquery"),c=a("framework"),d=c.net,e=b(".register-box .btn-register"),f=b(".register-box input[name=email]"),g=(b(".register-box input[name=pwd]"),function(){alert(f.val()),d.ajax()});e.bind("click",g)},{framework:"./framework/main",jquery:"./jquery/main"});

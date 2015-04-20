@@ -1,0 +1,62 @@
+body {
+	background: #007BBE;
+	font-family: "微软雅黑";
+}
+
+.register-box {
+	width: auto;
+	height: auto;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	> .item {
+		position: relative;
+		box-sizing: border-box;
+		width: 400px;
+		height: 70px;
+		margin: 0px;
+		background: #ffffff;
+		text-align: center;
+		line-height: 70px;
+		> label {
+			display: inline-block;
+			width: 100px;
+			color: #B1B1C6;
+			font-size: 20px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		> input {
+			display: inline-block;
+			font-size: 20px;
+			padding: 10px;
+			box-sizing: border-box;
+			width: 300px;
+			border: none;
+			height: 70px;
+			border: none;
+			outline: none;
+			position: absolute;
+			top: 0px;
+			left: 100px;
+			&:focus {
+				outline: none;
+			}
+		}
+		&.btn {
+			background: none;
+			text-align: center;
+			> .btn-register {
+				height: 100%;
+				text-align: center;
+				line-height: 70px;
+				color: #ffffff;
+				cursor: pointer;
+				font-size: 18px;
+				color: #ffffff;
+			}
+		}
+	}
+}

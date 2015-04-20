@@ -21,13 +21,13 @@ module.exports = function(grunt) {
 	var tasks = [
         'stylus', // css
         'browserify', 'uglify', 'cachebusttag:includeFilesConfig', // js
-        'htmlmin', 'cachebusttag:index' // html
+        'htmlmin', 'cachebusttag:index', 'cachebusttag:login' // html
     ];
 
     var tasksDebug = [
         'stylus', // css
         'browserify', 'cachebusttag:includeFilesConfig', // js
-        'htmlmin', 'cachebusttag:index' // html
+        'htmlmin', 'cachebusttag:index', 'cachebusttag:login' // html
     ];
 
 	grunt.initConfig({
@@ -74,6 +74,13 @@ module.exports = function(grunt) {
                 options: {
                     import: ['nib']
                 } 
+            },
+            login: {
+                src: path.resolve(srcStylePath, 'login', 'main.styl'),
+                dest: path.resolve(distStylePath, 'login.css'),
+                options: {
+                    import: ['nib']
+                } 
             }
         },
 		htmlmin: {
@@ -88,6 +95,18 @@ module.exports = function(grunt) {
                 },
                 src: path.resolve(srcPath, 'index.html'),
                 dest: path.resolve(distPath, 'index.html')
+            },
+            // 登陆页
+            login: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true,
+                    minifyCSS: true,
+                    minifyJS: true,
+                    processScripts: ['text/tmpl', 'text/javascript']
+                },
+                src: path.resolve(srcPath, 'login.html'),
+                dest: path.resolve(distPath, 'login.html')
             }
         },
         cachebusttag: {
@@ -95,6 +114,14 @@ module.exports = function(grunt) {
             index: {
                 src: path.resolve(distPath, 'index.html'),
                 dest: path.resolve(distPath, 'index.html'),
+                options: {
+                    basedir: prjPath.distPath
+                }
+            },
+            // 登陆页
+            login: {
+                src: path.resolve(distPath, 'login.html'),
+                dest: path.resolve(distPath, 'login.html'),
                 options: {
                     basedir: prjPath.distPath
                 }
