@@ -3,14 +3,44 @@ body {
 	font-family: "微软雅黑";
 }
 
-.register-box {
+.title {
+	height: 60px;
+	line-height: 60px;
+	font-size: 30px;
+	color: #ffffff;
+	position: absolute;
+	left: 50%;
+	top: 30%;
+	transform: translate(-50%,-50%);
+}
+
+.btn {
+	cursor: pointer;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.switch {
+	position: absolute;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+	color: #ffffff;
+	top: -25px;
+	text-align: right;
+	
+}
+
+.auth-box {
 	width: auto;
 	height: auto;
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%,-50%);
-	> .item {
+	> .form-item {
 		position: relative;
 		box-sizing: border-box;
 		width: 400px;
@@ -45,17 +75,15 @@ body {
 				outline: none;
 			}
 		}
-		&.btn {
+		&.act {
 			background: none;
 			text-align: center;
-			> .btn-register {
+			> .btn {
 				height: 100%;
 				text-align: center;
 				line-height: 70px;
 				color: #ffffff;
-				cursor: pointer;
 				font-size: 18px;
-				color: #ffffff;
 			}
 		}
 	}

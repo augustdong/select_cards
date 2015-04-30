@@ -13,21 +13,30 @@
 </head>
 <body>
     <div id="container">
-        <div class="register-box">
-            <div class="item">
+        <h1 class="title hide">知识总结与记忆平台</h1>
+        <div class="auth-box">
+            <h3 class="switch">
+                <span>切换到</span>
+                <span class="btn btn-switch-register">注册</span>
+                <span class="btn btn-switch-login hide">登录</span>
+            </h3>
+            <div class="form-item input">
                 <label>邮箱:</label>
                 <input type="email" name="email" maxlength="50">
             </div>
-            <div class="item">
+            <div class="form-item input">
                 <label>密码:</label>
                 <input type="password" name="pwd" maxlength="20">
             </div>
-            <div class="item btn">
-                <span class="btn-register">确认注册</span>
+            <div class="form-item act">
+                <span class="btn btn-register hide">注&nbsp册</span>
+                <span class="btn btn-login">登&nbsp录</span>
             </div>
         </div>
     </div>
     <script>
-    loadjs(['./login/main'], function(app) {});
+    loadjs(['./login/main'], function(app) {
+        app.init();
+    });
     </script>
 </body>
