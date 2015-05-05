@@ -21,13 +21,13 @@ module.exports = function(grunt) {
 	var tasks = [
         'stylus', // css
         'browserify', 'uglify', 'cachebusttag:includeFilesConfig', // js
-        'htmlmin', 'cachebusttag:index', 'cachebusttag:login' // html
+        'htmlmin', 'cachebusttag:index', 'cachebusttag:login', 'cachebusttag:set' // html
     ];
 
     var tasksDebug = [
         'stylus', // css
         'browserify', 'cachebusttag:includeFilesConfig', // js
-        'htmlmin', 'cachebusttag:index', 'cachebusttag:login' // html
+        'htmlmin', 'cachebusttag:index', 'cachebusttag:login', 'cachebusttag:set' // html
     ];
 
 	grunt.initConfig({
@@ -81,6 +81,13 @@ module.exports = function(grunt) {
                 options: {
                     import: ['nib']
                 } 
+            },
+            set: {
+                src: path.resolve(srcStylePath, 'set', 'main.styl'),
+                dest: path.resolve(distStylePath, 'set.css'),
+                options: {
+                    import: ['nib']
+                }
             }
         },
 		htmlmin: {
@@ -107,6 +114,18 @@ module.exports = function(grunt) {
                 },
                 src: path.resolve(srcPath, 'login.html'),
                 dest: path.resolve(distPath, 'login.html')
+            },
+            // 卡片集展示页面
+            set: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true,
+                    minifyCSS: true,
+                    minifyJS: true,
+                    processScripts: ['text/tmpl', 'text/javascript']
+                },
+                src: path.resolve(srcPath, 'set.html'),
+                dest: path.resolve(distPath, 'set.html')
             }
         },
         cachebusttag: {
@@ -122,6 +141,14 @@ module.exports = function(grunt) {
             login: {
                 src: path.resolve(distPath, 'login.html'),
                 dest: path.resolve(distPath, 'login.html'),
+                options: {
+                    basedir: prjPath.distPath
+                }
+            },
+            // 卡片集展示页面
+            set: {
+                src: path.resolve(distPath, 'set.html'),
+                dest: path.resolve(distPath, 'set.html'),
                 options: {
                     basedir: prjPath.distPath
                 }
