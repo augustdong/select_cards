@@ -2,7 +2,7 @@
 	"script": {
 	    "framework.js": ["./framework/main", "./knockout/main", "./jquery/main"],
 	    "index.js": ["./index/main"],
-	    "login.js": ["./login/main"],
+	    "auth.js": ["./auth/main"],
 	    "set.js": ["./set/main"]
 	}
 }

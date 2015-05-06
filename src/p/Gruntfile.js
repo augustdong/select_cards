@@ -21,13 +21,13 @@ module.exports = function(grunt) {
 	var tasks = [
         'stylus', // css
         'browserify', 'uglify', 'cachebusttag:includeFilesConfig', // js
-        'htmlmin', 'cachebusttag:index', 'cachebusttag:login', 'cachebusttag:set' // html
+        'htmlmin', 'cachebusttag:index', 'cachebusttag:auth', 'cachebusttag:set' // html
     ];
 
     var tasksDebug = [
         'stylus', // css
         'browserify', 'cachebusttag:includeFilesConfig', // js
-        'htmlmin', 'cachebusttag:index', 'cachebusttag:login', 'cachebusttag:set' // html
+        'htmlmin', 'cachebusttag:index', 'cachebusttag:auth', 'cachebusttag:set' // html
     ];
 
 	grunt.initConfig({
@@ -75,9 +75,9 @@ module.exports = function(grunt) {
                     import: ['nib']
                 } 
             },
-            login: {
-                src: path.resolve(srcStylePath, 'login', 'main.styl'),
-                dest: path.resolve(distStylePath, 'login.css'),
+            auth: {
+                src: path.resolve(srcStylePath, 'auth', 'main.styl'),
+                dest: path.resolve(distStylePath, 'auth.css'),
                 options: {
                     import: ['nib']
                 } 
@@ -104,7 +104,7 @@ module.exports = function(grunt) {
                 dest: path.resolve(distPath, 'index.html')
             },
             // 登陆页
-            login: {
+            auth: {
                 options: {
                     removeComments: true,
                     collapseWhitespace: true,
@@ -112,8 +112,8 @@ module.exports = function(grunt) {
                     minifyJS: true,
                     processScripts: ['text/tmpl', 'text/javascript']
                 },
-                src: path.resolve(srcPath, 'login.html'),
-                dest: path.resolve(distPath, 'login.html')
+                src: path.resolve(srcPath, 'auth.html'),
+                dest: path.resolve(distPath, 'auth.html')
             },
             // 卡片集展示页面
             set: {
@@ -138,9 +138,9 @@ module.exports = function(grunt) {
                 }
             },
             // 登陆页
-            login: {
-                src: path.resolve(distPath, 'login.html'),
-                dest: path.resolve(distPath, 'login.html'),
+            auth: {
+                src: path.resolve(distPath, 'auth.html'),
+                dest: path.resolve(distPath, 'auth.html'),
                 options: {
                     basedir: prjPath.distPath
                 }
