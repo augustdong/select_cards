@@ -21,13 +21,13 @@ module.exports = function(grunt) {
 	var tasks = [
         'stylus', // css
         'browserify', 'uglify', 'cachebusttag:includeFilesConfig', // js
-        'htmlmin', 'cachebusttag:index', 'cachebusttag:auth', 'cachebusttag:set' // html
+        'htmlmin', 'cachebusttag:index', 'cachebusttag:auth', 'cachebusttag:set', 'cachebusttag:setedit' // html
     ];
 
     var tasksDebug = [
         'stylus', // css
         'browserify', 'cachebusttag:includeFilesConfig', // js
-        'htmlmin', 'cachebusttag:index', 'cachebusttag:auth', 'cachebusttag:set' // html
+        'htmlmin', 'cachebusttag:index', 'cachebusttag:auth', 'cachebusttag:set', 'cachebusttag:setedit' // html
     ];
 
 	grunt.initConfig({
@@ -88,6 +88,13 @@ module.exports = function(grunt) {
                 options: {
                     import: ['nib']
                 }
+            },
+            setedit: {
+                src: path.resolve(srcStylePath, 'setedit', 'main.styl'),
+                dest: path.resolve(distStylePath, 'setedit.css'),
+                options: {
+                    import: ['nib']
+                }
             }
         },
 		htmlmin: {
@@ -126,6 +133,18 @@ module.exports = function(grunt) {
                 },
                 src: path.resolve(srcPath, 'set.html'),
                 dest: path.resolve(distPath, 'set.html')
+            },
+            // 卡片集编辑页面
+            setedit: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true,
+                    minifyCSS: true,
+                    minifyJS: true,
+                    processScripts: ['text/tmpl', 'text/javascript']
+                },
+                src: path.resolve(srcPath, 'setedit.html'),
+                dest: path.resolve(distPath, 'setedit.html')
             }
         },
         cachebusttag: {
@@ -149,6 +168,14 @@ module.exports = function(grunt) {
             set: {
                 src: path.resolve(distPath, 'set.html'),
                 dest: path.resolve(distPath, 'set.html'),
+                options: {
+                    basedir: prjPath.distPath
+                }
+            },
+            // 卡片集编辑页面
+            setedit: {
+                src: path.resolve(distPath, 'setedit.html'),
+                dest: path.resolve(distPath, 'setedit.html'),
                 options: {
                     basedir: prjPath.distPath
                 }

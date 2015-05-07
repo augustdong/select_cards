@@ -1,0 +1,1 @@
+loadjs.d("./setedit/main",function(a,b,c){var d=function(){console.log(13131)};c.init=d},{});
