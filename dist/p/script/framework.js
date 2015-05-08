@@ -266,7 +266,7 @@ exports.koApply = koApply;
 },{"jquery":"./jquery/main","knockout":"./knockout/main"});
 
 loadjs.url = "script/";
-loadjs.map = {"./auth/main":[2],"./com/card/binding/flip":[1],"./com/card/main":[1],"./com/card/model":[1],"./com/card/tmpl.html":[1],"./com/set/main":[3,1],"./com/set/model":[3],"./com/set/tmpl.html":[3],"./framework/core":[],"./framework/main":[],"./framework/net":[],"./index/main":[1],"./index/model":[1],"./index/tmpl.html":[1],"./jquery/main":[],"./knockout/main":[],"./set/main":[3,1],"./set/model":[3],"./set/tmpl.html":[3],"./setedit/main":[4],"./setedit/model":[4],"./setedit/tmpl.html":[4]};loadjs.d("./framework/main",function(require,module,exports){
+loadjs.map = {"./auth/main":[2],"./com/card/binding/flip":[1],"./com/card/main":[1],"./com/card/model":[1],"./com/card/tmpl.html":[1],"./com/set/main":[3,1],"./com/set/model":[3],"./com/set/tmpl.html":[3],"./framework/core":[],"./framework/main":[],"./framework/net":[],"./index/main":[1],"./index/model":[1],"./index/tmpl.html":[1],"./jquery/main":[],"./knockout/main":[],"./set/main":[3,1],"./set/model":[3],"./set/tmpl.html":[3],"./setedit/cardeditbox/main":[4],"./setedit/cardeditbox/model":[4],"./setedit/cardeditbox/tmpl.html":[4],"./setedit/main":[4],"./setedit/model":[4],"./setedit/tmpl.html":[4]};loadjs.d("./framework/main",function(require,module,exports){
 module = module.exports = {
 	core: require('./core.js'),
 	net: require('./net.js')

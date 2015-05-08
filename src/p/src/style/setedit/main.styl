@@ -8,17 +8,34 @@ body {
 	min-height: 100px;
 }
 
-.side-textarea {
-	width: 400px; 
-    min-height: 22px; 
-    margin-left: auto; 
-    margin-right: auto; 
-    padding: 5px; 
-    outline: 0; 
-    border: 1px solid #a0b3d6; 
-    font-size: 20px; 
-    word-wrap: break-word;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background: #ffffff;
+
+.cardeditbox {
+	width: 100%;
+}
+
+.auto-expand-textarea {
+	position: relative;
+	> .holder, .textarea {
+		width: 50%;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+  		font-smoothing: antialiased;
+		box-sizing: border-box;
+		font-family: "微软雅黑", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		padding: 4px;
+		border: 1px solid #000000;
+		background: #ffffff;
+		appearance: none;
+	}
+	> .holder {
+		visibility: hidden;
+	}
+	> .textarea {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		resize: none;
+		overflow: hidden;
+	}
 }
