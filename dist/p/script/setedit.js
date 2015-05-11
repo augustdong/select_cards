@@ -9,24 +9,24 @@ ko.components.register('setedit-cardeditbox', {
 });
 },{"./model.js":"./setedit/cardeditbox/model","./tmpl.html":"./setedit/cardeditbox/tmpl.html","knockout":"./knockout/main"});
 loadjs.d("./setedit/cardeditbox/model",function(require,module,exports){
+var ko = require('knockout');
+
 var Model = function() {
-	this.front = "asfasf";
-	this.back = "afsadfsadfsdafsa";
+	this.front = ko.observable("");
+	this.back = ko.observable("");
 }
 
 module.exports = exports = Model;
-},{});
+},{"knockout":"./knockout/main"});
 loadjs.d("./setedit/cardeditbox/tmpl.html",function(require,module,exports){
 module.exports = '<div class="cardeditbox">\n' +
-    '	<div class="auto-expand-textarea front">\n' +
-    '		<div class="holder">\n' +
-    '		</div>\n' +
-    '		<textarea class="textarea">sdfa</textarea>\n' +
+    '	<div class="auto-expand-textarea front leftside">\n' +
+    '		<div class="holder" data-bind="text: $component.front"></div>\n' +
+    '		<textarea class="textarea" data-bind="textInput: front" placeholder="输入点什么吧..."></textarea>\n' +
     '	</div>\n' +
     '	<div class="auto-expand-textarea back">\n' +
-    '		<div class="holder">\n' +
-    '		</div>\n' +
-    '		<textarea class="textarea">sdfa</textarea>\n' +
+    '		<div class="holder" data-bind="text: $component.back"></div>\n' +
+    '		<textarea class="textarea" data-bind="textInput: $component.back" placeholder="输入点什么吧..."></textarea>\n' +
     '	</div>\n' +
     '</div>';
 },{});
@@ -68,6 +68,12 @@ module.exports = exports = Model;
 loadjs.d("./setedit/tmpl.html",function(require,module,exports){
 module.exports = '<div class="setedit-container">\n' +
     '	<div class="cardeditbox-container" data-bind=\'component: {\n' +
+    '    	name: "setedit-cardeditbox"\n' +
+    '    }\'></div>\n' +
+    '    <div class="cardeditbox-container" data-bind=\'component: {\n' +
+    '    	name: "setedit-cardeditbox"\n' +
+    '    }\'></div>\n' +
+    '    <div class="cardeditbox-container" data-bind=\'component: {\n' +
     '    	name: "setedit-cardeditbox"\n' +
     '    }\'></div>\n' +
     '</div>';
